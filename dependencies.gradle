@@ -1,0 +1,77 @@
+ext {
+
+    versions = [
+            // These variables are located in gradle.properties
+            gradlePlugin : "${gradlePluginVersion}",
+            kotlin : "${kotlinVersion}",
+            coroutines: "1.6.4",
+            timber : "5.0.1",
+            jetpackCore : "1.9.0",
+            appcompat : "1.5.1",
+            recyclerview : "1.2.1",
+            navigation : "${navigationVersion}", // WHEN UPDATING -> PLEASE UPDATE THE VERSION IN THE build.gradle :plugins { ... }
+            material : "1.6.1",
+            retrofit : "2.9.0",
+            okhttp: "4.10.0",
+            lifecycle : "2.5.1",
+            room: "2.4.3",
+            constraintLayout: "2.1.4",
+            dependencyChecker: "0.42.0"
+    ]
+
+    // Kotlin
+    kotlin = [
+            core : "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
+            coroutines : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
+    ]
+
+    // Timber
+    timber = "com.jakewharton.timber:timber:${versions.timber}"
+
+    //constraintLayout
+    constraintLayout = "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
+
+    // Jetpack
+    jetpack = [
+            core : "androidx.core:core-ktx:${versions.jetpackCore}",
+            appcompat: "androidx.appcompat:appcompat:${versions.appcompat}",
+            recyclerview: "androidx.recyclerview:recyclerview:${versions.recyclerview}",
+    ]
+
+    lifecycle = [
+            extensions : "androidx.lifecycle:lifecycle-extensions:2.2.0",
+            viewmodel : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
+            livedata : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}"
+    ]
+
+    // UI
+    ui = [
+            material : "com.google.android.material:material:${versions.material}"
+    ]
+
+    // Navigation
+    navigation = [
+            fragment : "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+            ui : "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
+            plugin : "androidx.navigation:navigation-safe-args-gradle-plugin:${versions.navigation}",
+    ]
+
+    // Retrofit
+    network = [
+            retrofit : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+            gson : "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
+            okhttp : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+    ]
+
+    database = [
+            room : "androidx.room:room-ktx:${versions.room}",
+            compiler : "androidx.room:room-compiler:${versions.room}",
+    ]
+
+    test = [
+            junit : "junit:junit:4.13.2",
+    ]
+
+    dependencyChecker = "com.github.ben-manes:gradle-versions-plugin:${versions.dependencyChecker}"
+
+}

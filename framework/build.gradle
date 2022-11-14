@@ -1,0 +1,54 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+// This file is used to factorize all configuration of the project
+apply from: "${rootDir}/configuration.gradle"
+
+// This file is used to factorize all dependencies of the project
+apply from: "${rootDir}/dependencies.gradle"
+
+android {
+    compileSdk config.currentSdk
+
+    defaultConfig {
+        minSdk config.minSdkVersion
+        targetSdk config.currentSdk
+
+        testInstrumentationRunner config.testInstrumentationRunner
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility config.javaVersion
+        targetCompatibility config.javaVersion
+    }
+
+    kotlinOptions {
+        jvmTarget = config.jvmTarget
+    }
+}
+
+dependencies {
+
+    // Jetpack
+    api(jetpack.core)
+
+    //    Retrofit & Gson
+    api(network.retrofit)
+    api(network.gson)
+
+    // OkHttp
+    api(network.okhttp)
+
+    api project(path: ':data')
+
+}

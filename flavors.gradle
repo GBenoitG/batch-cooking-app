@@ -1,0 +1,27 @@
+android {
+
+    def appName = "${applicationName}"
+    /**
+     * FLAVORS
+     * */
+    flavorDimensions "env"
+    productFlavors {
+
+        production {
+            dimension "env"
+            matchingFallbacks = ["Production"]
+            resValue 'string', 'app_name', "${appName}"
+        }
+
+        stage {
+            dimension "env"
+            matchingFallbacks = ["Stage"]
+            applicationIdSuffix ".stg"
+            versionNameSuffix "-stg"
+            def fullName = "${appName}${versionNameSuffix}"
+            resValue 'string', 'app_name', "${fullName}"
+        }
+
+    }
+
+}

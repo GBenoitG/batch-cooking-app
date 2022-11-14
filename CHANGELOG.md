@@ -1,0 +1,1 @@
+# CHANGELOG - Batch Cooking App

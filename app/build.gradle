@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'androidx.navigation.safeargs.kotlin'
 }
 
 // This file is used to factorize all configurations of the project
@@ -24,7 +23,7 @@ android {
         minSdk config.minSdkVersion
         targetSdk config.currentSdk
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
 
         testInstrumentationRunner config.testInstrumentationRunner
     }
@@ -46,27 +45,34 @@ android {
     }
 
     buildFeatures {
-        dataBinding = true
+        compose = true
+        buildConfig = true
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion versions.kotlinComposeCompiler
+    }
+
 }
 
 dependencies {
 
-    // Jetpack
-    implementation(jetpack.appcompat)
-    implementation(jetpack.recyclerview)
-
     // Livedata
-    implementation(lifecycle.extensions)
-    implementation(lifecycle.viewmodel)
-    implementation(lifecycle.livedata)
+    implementation lifecycle.extensions
+    implementation lifecycle.viewmodel
+    implementation lifecycle.runtimeCompose
 
-    // UI
-    implementation(ui.material)
+    // Compose
+    implementation platform(compose.bom)
+    implementation compose.runtime
+    implementation compose.ui
+    implementation compose.foundation
+    implementation compose.foundationLayout
+    implementation compose.material3
+    implementation compose.navigation
+    implementation compose.activity
+    implementation compose.constraint
+    debugImplementation compose.uiTooling
 
-    // Navigation
-    implementation(navigation.fragment)
-    implementation(navigation.ui)
-    
     implementation project(path: ':framework')
 }

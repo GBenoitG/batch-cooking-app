@@ -1,24 +1,18 @@
 package fr.bendev.batchcookingapp.base
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import fr.bendev.batchcookingapp.domain.common.error.ErrorType
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
-abstract class BaseViewModel : ViewModel() {
+abstract class BaseViewModel<T : BaseUIState>(initialState: T) : ViewModel() {
 
-    protected val _isLoading = MutableLiveData<Boolean>()
-    protected val _modelError = MutableLiveData<ErrorType>()
-
-    val isLoading: LiveData<Boolean>
-        get() = _isLoading
-    val modelError: LiveData<ErrorType?>
-        get() = _modelError
+    protected val _uiState = MutableStateFlow(initialState)
+    val uiState: StateFlow<T> = _uiState
 
 }
 
-class BaseViewModelFactory<T>(val creator: () -> T) : ViewModelProvider.Factory {
+class BaseViewModelFactory<T : ViewModel>(val creator: () -> T) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         @Suppress("UNCHECKED_CAST")
         return creator() as T

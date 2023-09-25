@@ -1,21 +1,23 @@
 package fr.bendev.batchcookingapp.base
 
 import android.os.Bundle
-import androidx.annotation.LayoutRes
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
+import androidx.activity.compose.setContent
+import androidx.compose.runtime.Composable
+import androidx.fragment.app.FragmentActivity
+import fr.bendev.batchcookingapp.ui.theme.BatchTheme
 
-abstract class BaseActivity<VB: ViewDataBinding> : AppCompatActivity() {
-
-    protected lateinit var binding: VB
-
-    @get:LayoutRes
-    protected abstract val layoutId: Int
+abstract class BaseActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, layoutId)
+        setContent {
+            BatchTheme {
+                SetContentView()
+            }
+        }
     }
+
+    @Composable
+    abstract fun SetContentView()
 
 }

@@ -1,52 +1,13 @@
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
-import org.gradle.api.tasks.testing.logging.TestLogEvent
-
 ext {
 
     config = [
-            applicationId : "${applicationId}",
-            minSdkVersion : 24, // Android 7.0
-            currentSdk : 33, // Android 13
-            buildToolsVersion : "33.0.0",
-            testInstrumentationRunner : "androidx.test.runner.AndroidJUnitRunner",
-            javaVersion : JavaVersion.VERSION_1_8,
-            jvmTarget : JavaVersion.VERSION_1_8.toString(),
+            applicationId            : "${applicationId}",
+            minSdkVersion            : 24, // Android 7.0
+            currentSdk               : 33, // Android 13
+            buildToolsVersion        : "33.0.0",
+            testInstrumentationRunner: "androidx.test.runner.AndroidJUnitRunner",
+            javaVersion              : JavaVersion.VERSION_17,
+            jvmTarget                : JavaVersion.VERSION_17.toString(),
     ]
 
-}
-
-tasks.withType(Test) {
-    testLogging {
-        // set options for log level LIFECYCLE
-        events TestLogEvent.FAILED,
-                TestLogEvent.PASSED,
-                TestLogEvent.SKIPPED,
-                TestLogEvent.STANDARD_OUT
-        exceptionFormat TestExceptionFormat.FULL
-        showExceptions true
-        showCauses true
-        showStackTraces true
-
-        // set options for log level DEBUG and INFO
-        debug {
-            events TestLogEvent.STARTED,
-                    TestLogEvent.FAILED,
-                    TestLogEvent.PASSED,
-                    TestLogEvent.SKIPPED,
-                    TestLogEvent.STANDARD_ERROR,
-                    TestLogEvent.STANDARD_OUT
-            exceptionFormat TestExceptionFormat.FULL
-        }
-        info.events = debug.events
-        info.exceptionFormat = debug.exceptionFormat
-
-        afterSuite { desc, result ->
-            if (!desc.parent) { // will match the outermost suite
-                def output = "Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} passed, ${result.failedTestCount} failed, ${result.skippedTestCount} skipped)"
-                def startItem = '|  ', endItem = '  |'
-                def repeatLength = startItem.length() + output.length() + endItem.length()
-                println('\n' + ('-' * repeatLength) + '\n' + startItem + output + endItem + '\n' + ('-' * repeatLength))
-            }
-        }
-    }
 }

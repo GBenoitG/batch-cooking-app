@@ -68,6 +68,7 @@ dependencies {
     implementation compose.ui
     implementation compose.foundation
     implementation compose.foundationLayout
+    implementation compose.material
     implementation compose.material3
     implementation compose.navigation
     implementation compose.activity

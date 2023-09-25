@@ -67,6 +67,7 @@ ext {
             ui              : "androidx.compose.ui:ui",
             foundation      : "androidx.compose.foundation:foundation",
             foundationLayout: "androidx.compose.foundation:foundation-layout",
+            material       : "androidx.compose.material:material",
             material3       : "androidx.compose.material3:material3",
             uiTooling       : "androidx.compose.ui:ui-tooling",
 

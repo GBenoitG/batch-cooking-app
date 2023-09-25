@@ -10,7 +10,7 @@ apply from: "${rootDir}/configuration.gradle"
 apply from: "${rootDir}/dependencies.gradle"
 
 android {
-    namespace "${config.applicationId}.data"
+    namespace config.applicationId
     compileSdk config.currentSdk
 
     defaultConfig {
@@ -40,6 +40,9 @@ dependencies {
 
     // Logger
     api timber
+
+    // Test
+    testApi test.junit
 
     api project(path: ':domain')
 }

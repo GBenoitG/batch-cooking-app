@@ -16,7 +16,6 @@ android {
     namespace config.applicationId
 
     compileSdk config.currentSdk
-    buildToolsVersion config.buildToolsVersion
 
     defaultConfig {
         applicationId config.applicationId

@@ -1,2 +1,7 @@
 <resources>
+
+    <!-- Navigation labels -->
+    <string name="bottom_navigation_bar_label_cookbook">Cookbook</string>
+    <string name="bottom_navigation_bar_label_tocook">To Cook</string>
+    <string name="bottom_navigation_bar_label_settings">Settings</string>
 </resources>

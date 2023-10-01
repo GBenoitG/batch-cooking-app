@@ -16,7 +16,6 @@ android {
     namespace config.applicationId
 
     compileSdk config.currentSdk
-    buildToolsVersion config.buildToolsVersion
 
     defaultConfig {
         applicationId config.applicationId
@@ -74,6 +73,12 @@ dependencies {
     implementation compose.activity
     implementation compose.constraint
     debugImplementation compose.uiTooling
+
+    // Tests
+    androidTestImplementation test.junit
+    androidTestImplementation test.uiJunit
+    androidTestImplementation test.navigation
+    debugImplementation test.manifest
 
     implementation project(path: ':framework')
 }

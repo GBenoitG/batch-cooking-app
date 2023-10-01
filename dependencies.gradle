@@ -19,7 +19,13 @@ ext {
             navigation           : "2.5.3",
             viewModelCompose     : "2.5.1",
             kotlinComposeCompiler: "1.4.6",
-            constraint           : "1.0.1"
+            constraint           : "1.0.1",
+
+            // Tests
+            junit                : "4.13.2",
+            uiJunit              : "1.5.2",
+            testNavigation       : "2.5.3",
+            manifest             : "1.5.2"
     ]
 
     // Kotlin
@@ -57,7 +63,10 @@ ext {
     ]
 
     test = [
-            junit: "junit:junit:4.13.2",
+            junit     : "junit:junit:${versions.junit}",
+            uiJunit   : "androidx.compose.ui:ui-test-junit4:${versions.uiJunit}",
+            navigation: "androidx.navigation:navigation-testing:${versions.testNavigation}",
+            manifest  : "androidx.compose.ui:ui-test-manifest:${versions.manifest}"
     ]
 
     compose = [
@@ -67,7 +76,7 @@ ext {
             ui              : "androidx.compose.ui:ui",
             foundation      : "androidx.compose.foundation:foundation",
             foundationLayout: "androidx.compose.foundation:foundation-layout",
-            material       : "androidx.compose.material:material",
+            material        : "androidx.compose.material:material",
             material3       : "androidx.compose.material3:material3",
             uiTooling       : "androidx.compose.ui:ui-tooling",
 

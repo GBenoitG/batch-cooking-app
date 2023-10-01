@@ -74,5 +74,11 @@ dependencies {
     implementation compose.constraint
     debugImplementation compose.uiTooling
 
+    // Tests
+    androidTestImplementation test.junit
+    androidTestImplementation test.uiJunit
+    androidTestImplementation test.navigation
+    debugImplementation test.manifest
+
     implementation project(path: ':framework')
 }

@@ -13,6 +13,6 @@ fun ToCookScreen() {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Text(text = "ToCook")
+        Text(text = "ToCook Screen")
     }
 }

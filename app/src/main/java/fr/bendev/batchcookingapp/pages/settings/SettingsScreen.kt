@@ -13,6 +13,6 @@ fun SettingsScreen() {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Text(text = "Settings")
+        Text(text = "Settings Screen")
     }
 }

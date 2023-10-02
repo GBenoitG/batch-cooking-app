@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 // This file is used to factorize all configuration of the project
@@ -46,8 +47,8 @@ dependencies {
     // api network.gson
 
     // Database
-    // implementation database.room
-    // kapt database.compiler
+    implementation database.room
+    kapt database.compiler
 
     // OkHttp
     // api network.okhttp

@@ -1,6 +1,7 @@
 package fr.bendev.batchcookingapp.framework.di
 
 import android.app.Application
+import fr.bendev.batchcookingapp.framework.database.BatchDatabase
 
 /**
  * Injector is here to have instances of many component inside the app. We can use it for field
@@ -18,6 +19,13 @@ object Injector {
      * Network
      */
     // private lateinit var network: BatchCookingNetwork
+
+    /**
+     * Database
+     */
+    private val database: BatchDatabase by lazy {
+        BatchDatabase.getDatabase(application)
+    }
 
     /**
      * DAOs

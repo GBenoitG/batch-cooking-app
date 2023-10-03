@@ -4,12 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import fr.bendev.batchcookingapp.framework.database.entities.SampleEntity
+import fr.bendev.batchcookingapp.framework.database.entities.CookbookEntryDB
 import fr.bendev.batchcookingapp.framework.utils.Constants
 
 @Database(
     entities = [
-        SampleEntity::class
+        CookbookEntryDB::class
     ],
     version = 1,
     exportSchema = false

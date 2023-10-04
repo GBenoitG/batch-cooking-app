@@ -44,7 +44,7 @@ dependencies {
 
     //    Retrofit & Gson
     // api network.retrofit
-    // api network.gson
+    api network.gson
 
     // Database
     implementation database.room

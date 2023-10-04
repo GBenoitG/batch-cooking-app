@@ -4,6 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import fr.bendev.batchcookingapp.framework.database.converters.StringListConverter
+import fr.bendev.batchcookingapp.framework.database.daos.CookbookEntryDao
 import fr.bendev.batchcookingapp.framework.database.entities.CookbookEntryDB
 import fr.bendev.batchcookingapp.framework.utils.Constants
 
@@ -14,11 +17,15 @@ import fr.bendev.batchcookingapp.framework.utils.Constants
     version = 1,
     exportSchema = false
 )
+@TypeConverters(
+    StringListConverter::class
+)
 abstract class BatchDatabase : RoomDatabase() {
 
     /**
      * DAOs
      */
+    abstract val cookbookEntryDao: CookbookEntryDao
 
     companion object {
         // Singleton prevents multiple instances of database opening at the

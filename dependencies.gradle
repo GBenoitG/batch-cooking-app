@@ -12,6 +12,7 @@ ext {
             lifecycle            : "2.6.1",
             dependencyChecker    : "0.46.0",
             room                 : "2.5.1",
+            coil                 : "2.4.0",
 
             // Compose
             composeBom           : "2023.06.01",
@@ -84,6 +85,10 @@ ext {
             navigation      : "androidx.navigation:navigation-compose:${versions.navigation}",
             activity        : "androidx.activity:activity-compose:${versions.activity}",
             constraint      : "androidx.constraintlayout:constraintlayout-compose:${versions.constraint}"
+    ]
+
+    ui = [
+            coil: "io.coil-kt:coil-compose:${versions.coil}"
     ]
 
     dependencyChecker = "com.github.ben-manes:gradle-versions-plugin:${versions.dependencyChecker}"

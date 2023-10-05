@@ -1,6 +1,7 @@
 package fr.bendev.batchcookingapp
 
 import android.app.Application
+import fr.bendev.batchcookingapp.framework.di.BatchEnvironment
 import fr.bendev.batchcookingapp.framework.di.Injector
 import timber.log.Timber
 
@@ -12,7 +13,7 @@ class BatchCookingApplication : Application() {
         Timber.plant(Timber.DebugTree())
 
         Injector
-            .build(this)
-
+            .initContext(application = this)
+            .initEnv(env = BatchEnvironment.valueOf(BuildConfig.FLAVOR.uppercase()))
     }
 }

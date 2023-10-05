@@ -74,6 +74,9 @@ dependencies {
     implementation compose.constraint
     debugImplementation compose.uiTooling
 
+    // UI
+    implementation ui.coil
+
     // Tests
     androidTestImplementation test.junit
     androidTestImplementation test.uiJunit

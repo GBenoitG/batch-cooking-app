@@ -22,4 +22,7 @@
 
     <dimen name="icone_size">@dimen/size_large</dimen>
 
+    <dimen name="card_height">120dp</dimen>
+    <dimen name="image_card_width">102dp</dimen>
+
 </resources>

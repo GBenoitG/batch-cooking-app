@@ -43,6 +43,9 @@ dependencies {
 
     // Test
     testApi test.junit
+    androidTestApi test.junitKtx
+    testApi test.coroutines
+    androidTestApi test.coroutines
 
     api project(path: ':domain')
 }

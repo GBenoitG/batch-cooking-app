@@ -10,7 +10,7 @@ apply from: "${rootDir}/configuration.gradle"
 apply from: "${rootDir}/dependencies.gradle"
 
 android {
-    namespace config.applicationId
+    namespace "${config.applicationId}.data"
     compileSdk config.currentSdk
 
     defaultConfig {
@@ -43,6 +43,9 @@ dependencies {
 
     // Test
     testApi test.junit
+    androidTestApi test.junitKtx
+    testApi test.coroutines
+    androidTestApi test.coroutines
 
     api project(path: ':domain')
 }

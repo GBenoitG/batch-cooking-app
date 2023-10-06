@@ -1,4 +1,4 @@
-package fr.bendev.batchcookingapp
+package fr.bendev.batchcookingapp.data
 
 import junit.framework.TestCase.assertTrue
 import org.junit.Test

@@ -25,8 +25,10 @@ ext {
             // Tests
             junit                : "4.13.2",
             uiJunit              : "1.5.2",
+            junitKtx             : "1.1.5",
             testNavigation       : "2.5.3",
-            manifest             : "1.5.2"
+            manifest             : "1.5.2",
+            testCoroutines       : "1.7.2"
     ]
 
     // Kotlin
@@ -67,7 +69,9 @@ ext {
             junit     : "junit:junit:${versions.junit}",
             uiJunit   : "androidx.compose.ui:ui-test-junit4:${versions.uiJunit}",
             navigation: "androidx.navigation:navigation-testing:${versions.testNavigation}",
-            manifest  : "androidx.compose.ui:ui-test-manifest:${versions.manifest}"
+            manifest  : "androidx.compose.ui:ui-test-manifest:${versions.manifest}",
+            junitKtx  : "androidx.test.ext:junit-ktx:${versions.junitKtx}",
+            coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.testCoroutine"
     ]
 
     compose = [

@@ -1,4 +1,4 @@
-package fr.bendev.batchcookinapp.data.datasources.local
+package fr.bendev.batchcookingapp.data.datasources.local
 
 import fr.bendev.batchcookingapp.domain.common.models.CookbookEntry
 import kotlinx.coroutines.flow.Flow

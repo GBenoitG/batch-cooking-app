@@ -79,6 +79,7 @@ dependencies {
 
     // Tests
     androidTestImplementation test.junit
+    testImplementation test.junit
     androidTestImplementation test.uiJunit
     androidTestImplementation test.navigation
     debugImplementation test.manifest

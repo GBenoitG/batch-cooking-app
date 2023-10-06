@@ -1,6 +1,6 @@
 package fr.bendev.batchcookingapp.framework.datasource.local
 
-import fr.bendev.batchcookinapp.data.datasources.local.CookbookLocalDatasource
+import fr.bendev.batchcookingapp.data.datasources.local.CookbookLocalDatasource
 import fr.bendev.batchcookingapp.domain.common.models.CookbookEntry
 import fr.bendev.batchcookingapp.framework.database.daos.CookbookEntryDao
 import fr.bendev.batchcookingapp.framework.mappers.fromDBtoDomain

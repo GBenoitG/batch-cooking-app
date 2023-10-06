@@ -1,6 +1,6 @@
 package fr.bendev.batchcookingapp.framework.datasource.fake
 
-import fr.bendev.batchcookinapp.data.datasources.local.CookbookLocalDatasource
+import fr.bendev.batchcookingapp.data.datasources.local.CookbookLocalDatasource
 import fr.bendev.batchcookingapp.domain.common.models.CookbookEntry
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

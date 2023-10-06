@@ -1,8 +1,8 @@
 package fr.bendev.batchcookingapp.framework.di
 
 import android.app.Application
-import fr.bendev.batchcookinapp.data.datasources.local.CookbookLocalDatasource
-import fr.bendev.batchcookinapp.data.repositories.CookbookRepositoryImpl
+import fr.bendev.batchcookingapp.data.datasources.local.CookbookLocalDatasource
+import fr.bendev.batchcookingapp.data.repositories.CookbookRepositoryImpl
 import fr.bendev.batchcookingapp.domain.common.repositories.CookbookRepository
 import fr.bendev.batchcookingapp.framework.database.BatchDatabase
 import fr.bendev.batchcookingapp.framework.datasource.fake.CookbookFakeDatasourceImpl

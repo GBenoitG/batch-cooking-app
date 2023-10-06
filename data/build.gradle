@@ -10,7 +10,7 @@ apply from: "${rootDir}/configuration.gradle"
 apply from: "${rootDir}/dependencies.gradle"
 
 android {
-    namespace config.applicationId
+    namespace "${config.applicationId}.data"
     compileSdk config.currentSdk
 
     defaultConfig {

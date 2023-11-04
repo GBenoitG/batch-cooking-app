@@ -4,4 +4,21 @@
     <string name="bottom_navigation_bar_label_cookbook">Cookbook</string>
     <string name="bottom_navigation_bar_label_tocook">To Cook</string>
     <string name="bottom_navigation_bar_label_settings">Settings</string>
+
+    <!-- Top App Bar -->
+
+    <!-- Content Description -->
+    <string name="content_description_action_search">Rechercher</string>
+    <string name="content_description_action_filter">Filtrer</string>
+    
+    <!-- Cookbook Page -->
+    <string name="cookbook_page_title">Meals For You</string>
+
+    <!-- ToCook Page -->
+    <string name="tocook_page_title">Your Cooking Plan</string>
+
+    <!-- Settings Page -->
+    <string name="settings_page_title">@string/bottom_navigation_bar_label_settings</string>
+    
+    
 </resources>
